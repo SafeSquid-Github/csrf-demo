@@ -1,4 +1,4 @@
-# CSRF Demo Application
+# CSRF Attack Simulator
 
 This project consists of two Express applications that demonstrate a Cross-Site Request Forgery (CSRF) attack:
 
