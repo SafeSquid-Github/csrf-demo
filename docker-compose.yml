@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  bankease:
+    build: ./bankease
+    container_name: bankease
+    expose:
+      - "3000"
+    ports:
+      - 3000:3000
+    networks:
+      - caddy_network
+  
+  hiking:
+    build: ./hiking
+    container_name: hiking
+    expose:
+      - "4000"
+    ports:
+      - 4000:4000
+    networks:
+      - caddy_network
+  
+  caddy:
+    image: caddy:2
+    ports:
+      - 80:80
+      - 443:443
+      - 2019:2019
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - caddy_network
+    depends_on:
+      - bankease
+      - hiking
+
+networks:
+  caddy_network:
+    driver: bridge

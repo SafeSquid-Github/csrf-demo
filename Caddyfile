@@ -1,0 +1,9 @@
+bankease.com {
+  reverse_proxy bankease:3000
+  tls internal
+}
+
+hiking.com {
+  reverse_proxy hiking:4000
+  tls internal
+}

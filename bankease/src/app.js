@@ -46,7 +46,12 @@ app.post('/login', (req, res) => {
     user => user.email === email && user.password === password
   );
   if (user) {
-    res.cookie('email', email);
+    res.cookie('email', email, {
+      httpOnly: true,
+      sameSite: 'None',
+      secure: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
     res.redirect('/');
   } else {
     res.redirect('/login');
