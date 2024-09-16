@@ -56,7 +56,7 @@ This setup shows how a CSRF attack can exploit vulnerabilities in a web applicat
    npm start
    ```
 
-### Application Details
+## Application Details
 
 #### Vulnerable Banking Application (`localhost:3000`)
 
@@ -94,7 +94,7 @@ The attacker app simulates a malicious website that performs a CSRF attack on th
    - The hidden form is auto-submitted in an invisible iframe to avoid redirecting the user to the banking app.
    - This attack leverages the fact that the browser automatically includes session cookies for the vulnerable domain (`localhost:3000`) in the form submission, allowing the attack to succeed.
 
-### How to Test the CSRF Attack
+## How to Test the CSRF Attack
 
 1. **Login to the Banking App:**
 
